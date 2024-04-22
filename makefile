@@ -11,6 +11,8 @@ install:
 
 		sudo useradd -M _Waiter
 		sudo usermod -L _Waiter
+		sudo usermod -aG wheel _Waiter
+		sudo usermod -b /home/
 
 		sudo chown _Waiter Waiterd@.service
 		sudo chown _Waiter /opt/minecraft
