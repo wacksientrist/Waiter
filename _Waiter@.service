@@ -24,7 +24,7 @@ ProtectSystem=full
 NoNewPrivileges=false
 
 
-ExecStart=/usr/bin/screen -dmS mc-%i ./start.sh
+ExecStart=/usr/bin/screen -dmS Waiter-%i ./start.sh
 # Execute Minecraft Server Startup Script
 
 ExecReload=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff \"reload\"\015'
