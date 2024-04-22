@@ -1,10 +1,10 @@
 build:
-		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/Waiterd@.service --output Waiterd@.service
+		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/Waiterd@.service
 		ln -s ./ /etc/systemd/system/
 
 		mkdir /opt/minecraft	
-		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/Server
-		
+		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/start.sh
+		mv start.sh /opt/minecraft/$(Server)		
 		
 install:
 		echo This Should Be Run As Root!
@@ -28,3 +28,5 @@ enable:
 		sudo su - | exit
 		
 		sudo systemctl enable --now Waiterd@$(Server)
+clean:
+		rm -f *.sh
