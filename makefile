@@ -15,19 +15,18 @@ install:
 		sudo setenforce 0
 		sudo systemctl daemon-reload
 
-		useradd -M _Waiter
-		usermod -L _Waiter
-		usermod -s /bin/false _Waiter
+		sudo useradd -M _Waiter
+		sudo usermod -L _Waiter
 
-		chown _Waiter Waiterd@.service
-		chown _Waiter /opt/minecraft
-		chown _Waiter /opt/minecraft/*/start.sh
+		sudo chown _Waiter Waiterd@.service
+		sudo chown _Waiter /opt/minecraft
+		sudo chown _Waiter /opt/minecraft/*/start.sh
 
-		chmod +x /opt/minecraft/*/start.sh
-		chmod u+s /opt/minecraft/*/start.sh
-		chmod 755 /opt/minecraft/*/start.sh
+		sudo chmod +x /opt/minecraft/*/start.sh
+		sudo chmod u+s /opt/minecraft/*/start.sh
+		sudo chmod 755 /opt/minecraft/*/start.sh
 		
-		chmod 755 /opt/minecraft/
+		sudo chmod 755 /opt/minecraft/
 
 		sudo systemctl daemon-reload
 enable:
