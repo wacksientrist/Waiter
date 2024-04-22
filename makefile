@@ -1,5 +1,3 @@
-Server = surv
-
 build:
 		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/Waiterd@.service --output Waiterd@.service
 		ln -s ./ /etc/systemd/system/
