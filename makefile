@@ -1,8 +1,5 @@
 build:
-		ln -s ./Waiterd@.service /etc/systemd/system/
-
-		mkdir /opt/minecraft
-		cp start.sh /opt/minecraft/*/
+		mkdir /opt/minecraft | cp start.sh /opt/minecraft/*/
 		
 install:
 		echo This Should Be Run As Root!
@@ -24,6 +21,7 @@ install:
 		sudo chmod 755 /opt/minecraft/*/start.sh
 		
 		sudo chmod 755 /opt/minecraft/
+		mv ./Waiterd@.service /etc/systemd/system/
 
 		sudo systemctl daemon-reload
 enable:
