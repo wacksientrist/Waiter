@@ -23,12 +23,9 @@ ProtectSystem=full
 
 NoNewPrivileges=false
 
-# Set default memory values
-Environment="MCMINMEM=512M" "MCMAXMEM=1024M" "SHUTDOWN_DELAY=5" "POST_SHUTDOWN_DELAY=10" "JAVA_PATH=/usr/bin/java" "JAR_NAME=server.jar" "STOP_CMD=stop"
-# Change memory values in environment file
-EnvironmentFile=-/opt/minecraft/%i/server.conf
 
 ExecStart=/usr/bin/screen -dmS mc-%i ./start.sh
+# Execute Minecraft Server Startup Script
 
 ExecReload=/usr/bin/screen -p 0 -S mc-%i -X eval 'stuff \"reload\"\015'
 
