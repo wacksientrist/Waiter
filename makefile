@@ -21,10 +21,13 @@ install:
 
 		chown _Waiter Waiterd@.service
 		chown _Waiter /opt/minecraft
+		chown _Waiter /opt/minecraft/*/start.sh
 
 		chmod +x /opt/minecraft/*/start.sh
 		chmod u+s /opt/minecraft/*/start.sh
 		chmod 755 /opt/minecraft/*/start.sh
+		
+		chmod 755 /opt/minecraft/
 
 		sudo systemctl daemon-reload
 enable:
