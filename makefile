@@ -4,7 +4,8 @@ build:
 
 		mkdir /opt/minecraft	
 		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/start.sh
-		mv start.sh /opt/minecraft/$(Server)		
+
+		cp start.sh /opt/minecraft/*/
 		
 install:
 		echo This Should Be Run As Root!
@@ -19,7 +20,11 @@ install:
 		usermod -s /bin/false _Waiter
 
 		chown _Waiter Waiterd@.service
-		chown _Waiter /opt/minecraft	
+		chown _Waiter /opt/minecraft
+
+		chmod +x /opt/minecraft/*/start.sh
+		chmod u+s /opt/minecraft/*/start.sh
+		chmod 755 /opt/minecraft/*/start.sh
 
 		sudo systemctl daemon-reload
 enable:
