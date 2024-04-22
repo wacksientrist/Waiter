@@ -1,10 +1,7 @@
 build:
-		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/Waiterd@.service
-		ln -s ./ /etc/systemd/system/
+		ln -s ./Waiterd@.service /etc/systemd/system/
 
-		mkdir /opt/minecraft	
-		wget -r https://raw.githubusercontent.com/wacksientrist/Waiter/main/start.sh
-
+		mkdir /opt/minecraft
 		cp start.sh /opt/minecraft/*/
 		
 install:
