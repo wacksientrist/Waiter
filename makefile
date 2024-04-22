@@ -12,15 +12,15 @@ install:
 		sudo useradd -M _Waiter
 		sudo usermod -L _Waiter
 		sudo usermod -aG wheel _Waiter
-		sudo usermod -b /home/
 
 		sudo chown _Waiter Waiterd@.service
-		sudo chown _Waiter /opt/minecraft
-		sudo chown _Waiter /opt/minecraft/*/start.sh
+		sudo chown _Waiter:wheel /opt/minecraft
+		sudo chown _Waiter:wheel /opt/minecraft/*/start.sh
+		sudo chown _Waiter:wheel /opt/minecraft/*/*
 
-		sudo chmod +x /opt/minecraft/*/start.sh
-		sudo chmod u+s /opt/minecraft/*/start.sh
 		sudo chmod 755 /opt/minecraft/*/start.sh
+		sudo chmod u+s /opt/minecraft/*/start.sh
+		sudo chmod u+x /opt/minecraft/*/start.sh
 		
 		sudo chmod 755 /opt/minecraft/
 		mv ./Waiterd@.service /etc/systemd/system/
